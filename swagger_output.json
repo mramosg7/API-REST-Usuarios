@@ -1,0 +1,136 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "REST API",
+    "description": "Este proyecto se centra en el desarrollo de una API robusta que cumple con estándares RESTful, priorizando la seguridad mediante el uso de JWT para autenticación y almacenando la información de los usuarios en una base de datos MySQL. La implementación de endpoints es diseñada para cubrir las necesidades clave del sistema, facilitando la creación, autenticación y obtención de información de los usuarios de manera eficiente."
+  },
+  "externalDocs": {
+    "description": "Perfil de GitHub",
+    "url": "https://github.com/mramosg7"
+  },
+  "host": "localhost:3900",
+  "basePath": "/api/user",
+  "schemes": [
+    "http"
+  ],
+  "tags": [
+    {
+      "name": "Usuarios",
+      "description": "Operaciones relacionadas con la gestión de usuarios."
+    }
+  ],
+  "paths": {
+    "/login": {
+      "post": {
+        "tags": ["Usuarios"],
+        "description": "Permite a los usuarios autenticarse en la plataforma, generando un token JWT para futuras interacciones seguras.",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "email": {
+                  "example": "ejemplo@gmail.com"
+                },
+                "password": {
+                  "example": "123456"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/register": {
+      "post": {
+        "tags": ["Usuarios"],
+        "description": "Permite a los usuarios registrarse en la plataforma proporcionando la información necesaria, como nombre de usuario, correo electrónico y contraseña.",
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "nick": {
+                  "example": "ejemplo1"
+                },
+                "email": {
+                  "example": "ejemplo@gmail.com"
+                },
+                "password": {
+                  "example": "123456"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "409": {
+            "description": "Conflict"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/info": {
+      "get": {
+        "tags": ["Usuarios"],
+        "description": "Proporciona información detallada del perfil del usuario autenticado mediante el token JWT.",
+        "parameters": [
+          {
+            "name": "authorization",
+            "in": "header",
+            "type": "string",
+            "value" : "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJuaWNrIjoiZWplbXBsbzEiLCJlbWFpbCI6ImVqZW1wbG9AZ21haWwuY29tIiwicm9sIjoxLCJpYXQiOjE3MDIwMzc3NjcsImV4cCI6MTcwNDYyOTc2N30.jnLjcoZ-XdGi4Mp0250W6pLjFf_pQqHcjQnOgHwKwbs"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "409": {
+            "description": "Conflict"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    }
+  }
+}
