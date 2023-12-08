@@ -140,7 +140,7 @@ Las dependencias de entorno necesarias incluyen:
 
 ---
 
-© 2023 mramosg2 
+© 2023 mramosg7
 
 ## 🔗 Links
 [![portfolio](https://img.shields.io/badge/my_portfolio-800080?style=for-the-badge&logo=ko-fi&logoColor=white)](https://katherineoelsner.com/)
