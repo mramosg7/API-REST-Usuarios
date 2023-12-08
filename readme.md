@@ -73,7 +73,7 @@ Lo siguiente es una documentación básica de la API y se proporciona únicament
 | `authorization:` | `string` | **Required**. Aquí ira el token jwt.|
 
 #### Ejemplo de encabezado requerido:
-```json
+```
     {
         authorization: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJuaWNrIjoiZWplbXBsbzEiLCJlbWFpbCI6ImVqZW1wbG9AZ21haWwuY29tIiwicm9sIjoxLCJpYXQiOjE3MDIwMzg4MDQsImV4cCI6MTcwNDYzMDgwNH0.TO2g7FKihGdLxf47-T5j0IGG7t2CtRS4LNL178JDrxU"
     }
